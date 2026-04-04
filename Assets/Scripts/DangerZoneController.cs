@@ -1,9 +1,10 @@
 // DangerZoneController.cs 
-using UnityEngine; 
- 
+using UnityEngine;
+using System.Collections;
+
 public class DangerZoneController : MonoBehaviour 
-{ 
-    //[SerializeField] private FlightExamManager examManager; 
+{
+    [SerializeField] private FlightExamManager examManager; 
     //[SerializeField] private MissileLauncher missileLauncher; 
     [SerializeField] private float missileDelay = 5f; 
  
@@ -11,15 +12,26 @@ public class DangerZoneController : MonoBehaviour
  
     private void OnTriggerEnter(Collider collision) 
     { 
-        // TODO: confirm the Player tag 
-        // TODO: push the warning message "Entered a Dangerous Zone!" to the HUD 
-        // TODO: start the delayed missile launch countdown 
+        if (collision.CompareTag("Player"))
+        {
+            examManager.EnterDangerZone();
+
+            activeCountdown = StartCoroutine(MissileCountdown());
+        }
     } 
  
     private void OnTriggerExit(Collider collision) 
     { 
-        // TODO: confirm the Player tag 
-        // TODO: cancel any pending launch countdown 
-        // TODO: destroy the active missile and clear the HUD warning 
-    } 
+        if (collision.CompareTag("Player"))
+        {
+            if (activeCountdown != null) StopCoroutine(activeCountdown);
+ 
+            examManager.ExitDangerZone();
+        }
+    }
+
+    private IEnumerator MissileCountdown()
+    {
+        yield return new WaitForSeconds(missileDelay);
+    }
 }
