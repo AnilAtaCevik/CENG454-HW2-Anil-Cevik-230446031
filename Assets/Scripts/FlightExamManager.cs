@@ -13,11 +13,19 @@ public class FlightExamManager : MonoBehaviour
  
     public void EnterDangerZone() 
     { 
-        // TODO: update the mission state and HUD 
+        threatCleared = false;
+        missionText.text = "Entered a Dangerous Zone!";
+        missionText.color = Color.red;
+        
+        statusText.text = "THREAT DETECTED";
     } 
  
     public void ExitDangerZone() 
     { 
-        // TODO: mark the threat as cleared and refresh the HUD 
+        threatCleared = true;
+        missionText.text = "Zone Cleared. You are Safe.";
+        missionText.color = Color.green;
+        
+        statusText.text = "STABLE"; 
     } 
 }
