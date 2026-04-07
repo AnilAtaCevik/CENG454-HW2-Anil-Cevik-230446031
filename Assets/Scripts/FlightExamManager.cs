@@ -72,4 +72,18 @@ public class FlightExamManager : MonoBehaviour
         statusText.text = "Threat Avoided!";
         missionText.text = "Landing Allowed.";
     }
+
+    public bool CanLand()
+    {
+        return !inDangerZone && threatCleared && !missionComplete;
+    }
+
+    public void CompleteMission()
+    {
+        missionComplete = true;
+        
+        missionText.text = "Mission Completed!";
+        missionText.color = Color.green;
+        statusText.text = "Victory";
+    }
 }
