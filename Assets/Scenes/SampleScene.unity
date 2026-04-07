@@ -531,7 +531,7 @@ MonoBehaviour:
   pitchSpeed: 45
   yawSpeed: 45
   rollSpeed: 45
-  thrustSpeed: 5
+  thrustSpeed: 50
 --- !u!4 &247977779
 Transform:
   m_ObjectHideFlags: 0

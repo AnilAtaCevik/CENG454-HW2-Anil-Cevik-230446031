@@ -155,5 +155,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd6db238a408a2140a5d9474fe333868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissileHoming
-  moveSpeed: 50
+  moveSpeed: 70
   turnSpeed: 5

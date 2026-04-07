@@ -9,7 +9,7 @@ public class FlightController : MonoBehaviour
     [SerializeField] private float pitchSpeed  = 45f;  // degrees/second 
     [SerializeField] private float yawSpeed    = 45f;  // degrees/second 
     [SerializeField] private float rollSpeed   = 45f;  // degrees/second 
-    [SerializeField] private float thrustSpeed = 5f;   // units/second 
+    [SerializeField] private float thrustSpeed = 50f;   // units/second 
  
     private Rigidbody rb;
  

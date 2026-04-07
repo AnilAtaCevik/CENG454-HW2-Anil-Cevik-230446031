@@ -3,7 +3,7 @@ using UnityEngine;
  
 public class MissileHoming : MonoBehaviour 
 { 
-    [SerializeField] private float moveSpeed = 20f; 
+    [SerializeField] private float moveSpeed = 60f; 
     [SerializeField] private float turnSpeed = 5f; 
  
     private Transform target; 

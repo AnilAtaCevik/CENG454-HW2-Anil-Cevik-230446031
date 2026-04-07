@@ -21,7 +21,7 @@ public class AircraftThreatHandler : MonoBehaviour
         if (hitAudioSource != null)
             hitAudioSource.Play();
 
-        rb.velocity = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
         transform.position = respawnPoint.position;
         transform.rotation = respawnPoint.rotation;
 

@@ -82,7 +82,7 @@ public class FlightExamManager : MonoBehaviour
     {
         missionComplete = true;
         
-        missionText.text = "Mission Complated!";
+        missionText.text = "Mission Completed!";
         missionText.color = Color.green;
         statusText.text = "Victory";
     }
